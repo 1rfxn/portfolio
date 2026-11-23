@@ -10,6 +10,7 @@ export const profile = {
   // The brief and the resume list different LinkedIn URLs. Keep the one that is yours.
   linkedin: 'https://www.linkedin.com/in/irfan-basha06/',
   email: 'irfanbashahere@gmail.com',
+  whatsapp: '919790717330', // country code + number, digits only
   resume: '/resume/Irfan-Basha-Resume.pdf',
   photo: '/images/profile.jpg',
   photoFallback: '/images/profile.svg',
