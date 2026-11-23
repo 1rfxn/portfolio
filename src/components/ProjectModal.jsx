@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { X, Github, Image } from 'lucide-react'
+import { X, Github } from 'lucide-react'
 const Block = ({ t, children }) => <div><h4 className="font-display text-lg mb-2">{t}</h4>{children}</div>
 export default function ProjectModal({ p, onClose }) {
   useEffect(() => { const k = e => e.key === 'Escape' && onClose(); document.addEventListener('keydown', k); document.body.style.overflow = 'hidden'
@@ -18,9 +18,7 @@ export default function ProjectModal({ p, onClose }) {
         <Block t="Key features"><ul className="mut list-disc pl-5 space-y-1">{p.features.map(f => <li key={f}>{f}</li>)}</ul></Block>
         <Block t="My contribution"><p className="mut">{p.contribution}</p></Block>
         <Block t="Technologies"><div className="flex flex-wrap gap-2">{p.tech.map(t => <span key={t} className="chip">{t}</span>)}</div></Block>
-        <div className="grid grid-cols-2 gap-3">{[1, 2].map(i => <div key={i} className="aspect-video card grid place-items-center mut text-sm"><span className="flex gap-2"><Image size={16}/> Screenshot {i} placeholder</span></div>)}</div>
-        {p.github ? <a href={p.github} target="_blank" rel="noreferrer" className="btn btn-p"><Github size={16}/> View on GitHub</a>
-          : <span className="btn mut cursor-not-allowed"><Github size={16}/> GitHub link — add in data/projects.js</span>}
+        {p.github && <a href={p.github} target="_blank" rel="noreferrer" className="btn btn-p"><Github size={16}/> View on GitHub</a>}
       </motion.div>
     </motion.div>)
 }
